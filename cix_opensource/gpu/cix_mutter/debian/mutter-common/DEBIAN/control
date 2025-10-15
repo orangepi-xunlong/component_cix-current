@@ -1,0 +1,22 @@
+Package: mutter-common
+Source: mutter
+Version: 1:43.8-0+deb12u1+cix.2503.radxa
+Architecture: all
+Maintainer: Debian GNOME Maintainers <pkg-gnome-maintainers@lists.alioth.debian.org>
+Installed-Size: 3634
+Depends: dconf-gsettings-backend | gsettings-backend
+Provides: mutter-common (= 43.8-0+deb12u1)
+Section: misc
+Priority: optional
+Multi-Arch: foreign
+Description: shared files for the Mutter window manager
+ Mutter is a Wayland display server and X11 window manager and
+ compositor library. It contains functionality related to, among other
+ things, window management, window compositing, focus tracking, workspace
+ management, keybindings and monitor configuration.
+ .
+ Internally it uses a fork of Cogl, a hardware acceleration abstraction
+ library used to simplify usage of OpenGL pipelines, as well as a fork
+ of Clutter, a scene graph and user interface toolkit.
+ .
+ This package contains the shared files.

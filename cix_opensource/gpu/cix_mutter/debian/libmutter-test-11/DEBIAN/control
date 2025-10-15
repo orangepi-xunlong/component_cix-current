@@ -1,0 +1,18 @@
+Package: libmutter-test-11
+Source: mutter
+Version: 1:43.8-0+deb12u1+cix.2503.radxa
+Architecture: arm64
+Maintainer: Debian GNOME Maintainers <pkg-gnome-maintainers@lists.alioth.debian.org>
+Installed-Size: 200
+Depends: libmutter-11-0 (= 1:43.8-0+deb12u1+cix.2503.radxa), mutter (= 1:43.8-0+deb12u1+cix.2503.radxa), libc6 (>= 2.17), libcairo2 (>= 1.14.0), libgles2, libglib2.0-0 (>= 2.69.0), libxcb1, libxext6
+Provides: libmutter-test-11 (= 43.8-0+deb12u1)
+Section: libs
+Priority: optional
+Description: Test helper library for GNOME's window manager library
+ Mutter is a Wayland display server and X11 window manager and
+ compositor library. It contains functionality related to, among other
+ things, window management, window compositing, focus tracking, workspace
+ management, keybindings and monitor configuration.
+ .
+ This package contains a private library used by the automated tests for
+ mutter and gnome-shell. It should not be used by non-GNOME packages.

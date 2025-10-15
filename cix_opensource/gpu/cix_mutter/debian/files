@@ -1,0 +1,12 @@
+gir1.2-mutter-11_43.8-0+deb12u1+cix.2503.radxa_arm64.deb introspection optional
+libmutter-11-0-dbgsym_43.8-0+deb12u1+cix.2503.radxa_arm64.deb debug optional automatic=yes
+libmutter-11-0_43.8-0+deb12u1+cix.2503.radxa_arm64.deb libs optional
+libmutter-11-dev_43.8-0+deb12u1+cix.2503.radxa_arm64.deb libdevel optional
+libmutter-test-11-dbgsym_43.8-0+deb12u1+cix.2503.radxa_arm64.deb debug optional automatic=yes
+libmutter-test-11_43.8-0+deb12u1+cix.2503.radxa_arm64.deb libs optional
+mutter-11-tests-dbgsym_43.8-0+deb12u1+cix.2503.radxa_arm64.deb debug optional automatic=yes
+mutter-11-tests_43.8-0+deb12u1+cix.2503.radxa_arm64.deb x11 optional
+mutter-common_43.8-0+deb12u1+cix.2503.radxa_all.deb misc optional
+mutter-dbgsym_43.8-0+deb12u1+cix.2503.radxa_arm64.deb debug optional automatic=yes
+mutter_43.8-0+deb12u1+cix.2503.radxa_arm64.buildinfo x11 optional
+mutter_43.8-0+deb12u1+cix.2503.radxa_arm64.deb x11 optional

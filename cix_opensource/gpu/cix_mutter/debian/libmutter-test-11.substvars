@@ -1,0 +1,7 @@
+gnome:NextUpstreamVersion=44~
+gnome:NextVersion=1:44~
+gnome:UpstreamVersion=43~
+gnome:Version=1:43~
+shlibs:Depends=libc6 (>= 2.17), libcairo2 (>= 1.14.0), libgles2, libglib2.0-0 (>= 2.69.0), libmutter-11-0 (>= 43.2), libxcb1, libxext6
+misc:Depends=
+misc:Pre-Depends=

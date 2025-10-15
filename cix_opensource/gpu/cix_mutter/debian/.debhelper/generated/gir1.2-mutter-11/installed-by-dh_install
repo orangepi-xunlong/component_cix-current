@@ -1,0 +1,5 @@
+debian/tmp/usr/lib/aarch64-linux-gnu/mutter-11/Cally-11.typelib
+debian/tmp/usr/lib/aarch64-linux-gnu/mutter-11/Clutter-11.typelib
+debian/tmp/usr/lib/aarch64-linux-gnu/mutter-11/Cogl-11.typelib
+debian/tmp/usr/lib/aarch64-linux-gnu/mutter-11/CoglPango-11.typelib
+debian/tmp/usr/lib/aarch64-linux-gnu/mutter-11/Meta-11.typelib

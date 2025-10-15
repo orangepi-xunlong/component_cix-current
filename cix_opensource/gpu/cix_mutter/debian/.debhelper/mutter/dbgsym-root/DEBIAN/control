@@ -1,0 +1,12 @@
+Package: mutter-dbgsym
+Source: mutter
+Version: 1:43.8-0+deb12u1+cix.2503.radxa
+Auto-Built-Package: debug-symbols
+Architecture: arm64
+Maintainer: Debian GNOME Maintainers <pkg-gnome-maintainers@lists.alioth.debian.org>
+Installed-Size: 83
+Depends: mutter (= 1:43.8-0+deb12u1+cix.2503.radxa)
+Section: debug
+Priority: optional
+Description: debug symbols for mutter
+Build-Ids: 19c0a8e059b12ceaae809f922bcd25ce92db2e76 3968d66faa460bdd16bb450276af400d72ea3df1 5bb42a30363731cf8d01fd5248e71616096bd27a

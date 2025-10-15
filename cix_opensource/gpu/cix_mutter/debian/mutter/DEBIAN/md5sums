@@ -1,0 +1,8 @@
+b07a924886add56a8207dda6d3811fc7  usr/bin/mutter
+129b0a4f91072c59817670cd652b133e  usr/lib/aarch64-linux-gnu/mutter-11/plugins/libdefault.so
+b0dd67ee075fa0079e8a95601333f096  usr/libexec/mutter-restart-helper
+6f12e5a10b3bb987f6dc815c7444c10d  usr/share/applications/mutter.desktop
+aa1b497300f96fc96ac4d15c75970e0e  usr/share/doc/mutter/NEWS.gz
+2b429d5a02c13e817aec8f6840ff2621  usr/share/doc/mutter/README.Debian
+1b813f0c2094cc461864d9f04b88283a  usr/share/doc/mutter/changelog.Debian.gz
+4b9f09d5187c3144e0a269d05f41a90c  usr/share/doc/mutter/copyright

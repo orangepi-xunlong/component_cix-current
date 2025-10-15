@@ -1,0 +1,11 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: cix-grubcfg
+Upstream-Contact: https://www.cixtech.com
+Source: https://www.cixtech.com
+
+Files: *
+Copyright: 2024 ClayStan <claystan97@gmail.com>
+License: GPL-2
+
+License: GPL-2
+ Debian systems provide the GPL 2 in /usr/share/common-licenses/GPL-2

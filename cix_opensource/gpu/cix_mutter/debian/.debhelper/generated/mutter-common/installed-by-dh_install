@@ -1,0 +1,6 @@
+debian/tmp/lib/udev/rules.d/61-mutter.rules
+debian/tmp/usr/share/GConf
+debian/tmp/usr/share/glib-2.0
+debian/tmp/usr/share/gnome-control-center
+debian/tmp/usr/share/locale
+debian/tmp/usr/share/man

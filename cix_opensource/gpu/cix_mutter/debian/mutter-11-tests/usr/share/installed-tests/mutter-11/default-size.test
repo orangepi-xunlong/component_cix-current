@@ -1,0 +1,9 @@
+[Test]
+Description=Mutter stacking test: default-size
+# Can't use TestEnvironment for GSETTINGS_BACKEND=memory until there's
+# a solution for
+# https://gitlab.gnome.org/GNOME/gnome-desktop-testing/-/issues/1,
+# and anyway that wouldn't be sufficient to handle XDG_RUNTIME_DIR
+Exec=sh -ec 'env GSETTINGS_BACKEND=memory XDG_RUNTIME_DIR="$(mktemp -d -t mutter-11-default-size-XXXXXX)" /usr/libexec/installed-tests/mutter-11/mutter-installed-dbus-session.py xvfb-run -a -s "+iglx -noreset" -- /usr/libexec/installed-tests/mutter-11/mutter-test-runner /usr/share/mutter-11/tests/stacking/default-size.metatest'
+Type=session
+Output=TAP

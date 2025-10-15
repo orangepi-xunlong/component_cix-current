@@ -1,0 +1,16 @@
+debian/tmp/usr/include/mutter-11/clutter
+debian/tmp/usr/include/mutter-11/cogl
+debian/tmp/usr/include/mutter-11/meta
+debian/tmp/usr/lib/aarch64-linux-gnu/libmutter-11.so
+debian/tmp/usr/lib/aarch64-linux-gnu/mutter-11/libmutter-clutter-11.so
+debian/tmp/usr/lib/aarch64-linux-gnu/mutter-11/libmutter-cogl-11.so
+debian/tmp/usr/lib/aarch64-linux-gnu/mutter-11/libmutter-cogl-pango-11.so
+debian/tmp/usr/lib/aarch64-linux-gnu/mutter-11/Cally-11.gir
+debian/tmp/usr/lib/aarch64-linux-gnu/mutter-11/Clutter-11.gir
+debian/tmp/usr/lib/aarch64-linux-gnu/mutter-11/Cogl-11.gir
+debian/tmp/usr/lib/aarch64-linux-gnu/mutter-11/CoglPango-11.gir
+debian/tmp/usr/lib/aarch64-linux-gnu/mutter-11/Meta-11.gir
+debian/tmp/usr/lib/aarch64-linux-gnu/pkgconfig/libmutter-11.pc
+debian/tmp/usr/lib/aarch64-linux-gnu/pkgconfig/mutter-clutter-11.pc
+debian/tmp/usr/lib/aarch64-linux-gnu/pkgconfig/mutter-cogl-11.pc
+debian/tmp/usr/lib/aarch64-linux-gnu/pkgconfig/mutter-cogl-pango-11.pc

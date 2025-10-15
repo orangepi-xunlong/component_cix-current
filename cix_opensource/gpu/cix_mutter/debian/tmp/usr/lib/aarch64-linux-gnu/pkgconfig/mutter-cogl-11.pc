@@ -1,0 +1,12 @@
+prefix=/usr
+includedir=${prefix}/include
+libdir=${prefix}/lib/aarch64-linux-gnu
+
+apiversion=11
+
+Name: Cogl
+Description: An object oriented GL/GLES Abstraction/Utility Layer in mutter
+Version: 43.8
+Requires: glib-2.0 >=  2.69.0, gio-unix-2.0 >=  2.69.0, gobject-2.0 >=  2.69.0, graphene-gobject-1.0 >=  1.10.2, wayland-server >=  1.21, egl, x11, gl, glesv2
+Libs: -L${prefix}/lib/aarch64-linux-gnu/mutter-11 -lmutter-cogl-11 -lm
+Cflags: -I${includedir}/mutter-11/cogl

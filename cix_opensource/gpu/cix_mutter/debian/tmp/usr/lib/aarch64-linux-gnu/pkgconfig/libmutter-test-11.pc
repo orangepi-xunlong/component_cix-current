@@ -1,0 +1,13 @@
+prefix=/usr
+includedir=${prefix}/include
+libdir=${prefix}/lib/aarch64-linux-gnu
+
+apiversion=11
+tests_datadir=${prefix}/share/mutter-11/tests
+
+Name: Meta (test framework)
+Description: Mutter test framework
+Version: 43.8
+Requires: libmutter-11
+Libs: -L${prefix}/lib/aarch64-linux-gnu -lmutter-test-11
+Cflags: -I${includedir}/mutter-11

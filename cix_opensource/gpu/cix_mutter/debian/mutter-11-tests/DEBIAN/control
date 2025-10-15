@@ -1,0 +1,22 @@
+Package: mutter-11-tests
+Source: mutter
+Version: 1:43.8-0+deb12u1+cix.2503.radxa
+Architecture: arm64
+Maintainer: Debian GNOME Maintainers <pkg-gnome-maintainers@lists.alioth.debian.org>
+Installed-Size: 2667
+Depends: at-spi2-core, dbus-daemon, dmz-cursor-theme, libmutter-11-0 (= 1:43.8-0+deb12u1+cix.2503.radxa), libmutter-test-11 (= 1:43.8-0+deb12u1+cix.2503.radxa), mutter (= 1:43.8-0+deb12u1+cix.2503.radxa), python3, python3-dbus, python3-dbusmock, xauth, xvfb, xwayland, libc6 (>= 2.34), libcairo2 (>= 1.10.0), libcolord2 (>= 1.4.5), libgbm1 (>= 21.3.0~rc1), libgles2, libglib2.0-0 (>= 2.69.0), libgtk-3-0 (>= 3.21.5), libpipewire-0.3-0 (>= 0.3.33), libwayland-client0 (>= 1.21.0), libwayland-cursor0 (>= 1.21.0), libwayland-server0 (>= 1.21.0), libx11-6, libxext6
+Provides: mutter-11-tests (= 43.8-0+deb12u1)
+Section: x11
+Priority: optional
+Description: Tests for GNOME's window manager library
+ Mutter is a Wayland display server and X11 window manager and
+ compositor library. It contains functionality related to, among other
+ things, window management, window compositing, focus tracking, workspace
+ management, keybindings and monitor configuration.
+ .
+ Internally it uses a fork of Cogl, a hardware acceleration abstraction
+ library used to simplify usage of OpenGL pipelines, as well as a fork
+ of Clutter, a scene graph and user interface toolkit.
+ .
+ This package contains test programs, designed to be run as part of a
+ regression testsuite.

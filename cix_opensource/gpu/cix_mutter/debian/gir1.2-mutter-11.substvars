@@ -1,0 +1,7 @@
+gir:Depends=gir1.2-atk-1.0, gir1.2-freedesktop (>= 0.9.12), gir1.2-gdesktopenums-3.0 (>= 40~alpha), gir1.2-glib-2.0 (>= 0.9.12), gir1.2-graphene-1.0 (>= 1.10.2), gir1.2-gtk-3.0 (>= 3.19.8), gir1.2-json-1.0 (>= 0.13.2-1~), gir1.2-pango-1.0 (>= 1.46.0), libmutter-11-0 (>= 43.5)
+gnome:NextUpstreamVersion=44~
+gnome:NextVersion=1:44~
+gnome:UpstreamVersion=43~
+gnome:Version=1:43~
+misc:Depends=
+misc:Pre-Depends=

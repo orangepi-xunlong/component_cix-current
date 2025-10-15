@@ -1,0 +1,12 @@
+prefix=/usr
+includedir=${prefix}/include
+libdir=${prefix}/lib/aarch64-linux-gnu
+
+apiversion=11
+
+Name: CoglPango
+Description: A text rendering for Cogl in mutter
+Version: 43.8
+Requires: glib-2.0 >=  2.69.0, gio-unix-2.0 >=  2.69.0, gobject-2.0 >=  2.69.0, graphene-gobject-1.0 >=  1.10.2, wayland-server >=  1.21, egl, x11, gl, glesv2, mutter-cogl-11
+Libs: -L${prefix}/lib/aarch64-linux-gnu/mutter-11 -lmutter-cogl-pango-11
+Cflags: -I${includedir}/mutter-11/cogl

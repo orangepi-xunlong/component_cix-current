@@ -1,0 +1,2 @@
+/etc/default/grub.d/cix_grub.cfg
+/etc/grub.d/08_cix_linux

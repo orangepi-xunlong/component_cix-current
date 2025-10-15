@@ -1,0 +1,6 @@
+misc:Depends=dconf-gsettings-backend | gsettings-backend
+gnome:Version=1:43~
+gnome:UpstreamVersion=43~
+gnome:NextVersion=1:44~
+gnome:NextUpstreamVersion=44~
+misc:Pre-Depends=

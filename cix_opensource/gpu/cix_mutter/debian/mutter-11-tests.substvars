@@ -1,0 +1,7 @@
+gnome:NextUpstreamVersion=44~
+gnome:NextVersion=1:44~
+gnome:UpstreamVersion=43~
+gnome:Version=1:43~
+shlibs:Depends=libc6 (>= 2.34), libcairo2 (>= 1.10.0), libcolord2 (>= 1.4.5), libgbm1 (>= 21.3.0~rc1), libgles2, libglib2.0-0 (>= 2.69.0), libgtk-3-0 (>= 3.21.5), libmutter-11-0 (>= 43.2), libmutter-test-11 (>= 43.7-1~), libpipewire-0.3-0 (>= 0.3.33), libwayland-client0 (>= 1.21.0), libwayland-cursor0 (>= 1.21.0), libwayland-server0 (>= 1.21.0), libx11-6, libxext6
+misc:Depends=
+misc:Pre-Depends=

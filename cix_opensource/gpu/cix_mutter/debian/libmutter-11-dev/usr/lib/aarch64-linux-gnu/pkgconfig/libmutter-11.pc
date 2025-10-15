@@ -1,0 +1,14 @@
+prefix=/usr
+includedir=${prefix}/include
+libdir=${prefix}/lib/aarch64-linux-gnu
+
+apiversion=11
+girdir=${libdir}/mutter-11
+typelibdir=${libdir}/mutter-11
+
+Name: Meta
+Description: Mutter compositor and window manager library
+Version: 43.8
+Requires: cairo >=  1.10.0, gio-unix-2.0 >=  2.69.0, glib-2.0 >=  2.69.0, gsettings-desktop-schemas >=  40.alpha, gtk+-3.0 >=  3.19.8, pango >=  1.46.0, gl, egl, xfixes >=  6, xi >=  1.7.4, x11, wayland-server >=  1.21, mutter-clutter-11
+Libs: -L${prefix}/lib/aarch64-linux-gnu -lmutter-11
+Cflags: -I${includedir}/mutter-11

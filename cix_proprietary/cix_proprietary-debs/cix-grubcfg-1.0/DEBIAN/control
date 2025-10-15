@@ -1,0 +1,10 @@
+Package: cix-grubcfg
+Version: 1.0-1
+Architecture: arm64
+Maintainer: Clay Stan <claystan97@gmail.com>
+Installed-Size: 130
+Section: utils
+Priority: optional
+Homepage: https://www.cixtech.com
+Description: Cix grub configuration
+ This package contains the grub configuration for the Cix OS.

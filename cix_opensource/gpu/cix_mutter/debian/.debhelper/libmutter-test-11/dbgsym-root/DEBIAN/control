@@ -1,0 +1,12 @@
+Package: libmutter-test-11-dbgsym
+Source: mutter
+Version: 1:43.8-0+deb12u1+cix.2503.radxa
+Auto-Built-Package: debug-symbols
+Architecture: arm64
+Maintainer: Debian GNOME Maintainers <pkg-gnome-maintainers@lists.alioth.debian.org>
+Installed-Size: 194
+Depends: libmutter-test-11 (= 1:43.8-0+deb12u1+cix.2503.radxa)
+Section: debug
+Priority: optional
+Description: debug symbols for libmutter-test-11
+Build-Ids: b4806e11af70760c8c5f5f0c46d367d6fe199fd9

@@ -1,0 +1,4 @@
+debian/tmp/usr/bin
+debian/tmp/usr/lib/aarch64-linux-gnu/mutter-11/plugins
+debian/tmp/usr/libexec/mutter-restart-helper
+debian/tmp/usr/share/applications
