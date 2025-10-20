@@ -255,16 +255,6 @@ int sky1_npu_pm_runtime_get_sync(struct device *dev)
 		return ret;
 	}
 
-	if (has_acpi_companion(dev)) {
-		for (int i = 0; i < CIX_NPU_PD_NUM; i++) {
-			ret = pm_runtime_get_sync(cix_aipu_priv->pd_core[i]);
-			if (ret < 0) {
-				dev_err(cix_aipu_priv->pd_core[i], "NPU core PM runtime get sync failed! ret=%d", ret);
-				return ret;
-			}
-		}
-	}
-
 	return ret;
 #else /* !CONFIG_PM  */
 	return 0;
@@ -275,14 +265,6 @@ int sky1_npu_pm_runtime_put(struct device *dev)
 {
 #ifdef CONFIG_PM
 	int ret = 0;
-
-	if (has_acpi_companion(dev)) {
-		for (int i = 0; i < CIX_NPU_PD_NUM; i++) {
-			ret = pm_runtime_put(cix_aipu_priv->pd_core[i]);
-			if (ret < 0)
-				dev_err(cix_aipu_priv->pd_core[i], "NPU core PM runtime put failed! ret=%d", ret);
-		}
-	}
 
 	ret = pm_runtime_put(dev);
 	if (ret < 0)
@@ -370,24 +352,25 @@ static int sky1_npu_probe(struct platform_device *p_dev)
 
     if (has_acpi_companion(&p_dev->dev)) {
 #ifdef	CONFIG_ACPI
+	p_dev->dev.power.ignore_children = true;
         fwnode_for_each_child_node(p_dev->dev.fwnode, child) {
-            if (is_acpi_data_node(child)) {
-                continue;
-            }
-            if (!strncmp(acpi_device_bid(to_acpi_device_node(child)),
-                            NPU_CORE_ACPI_NAME_PREFIX, ACPI_NAMESEG_SIZE - 1)) {
-                if (i >= CIX_NPU_PD_NUM) {
-                    dev_err(&(to_acpi_device_node(child)->dev), "pmDomains more than limits, Num:limits=[%d:%d].",
-                                    i + 1, CIX_NPU_PD_NUM);
-                    ret = -EFAULT;
-                    goto npu_probe_failed;
-                }
-                acpi_bind_one(&(to_acpi_device_node(child)->dev), to_acpi_device_node(child));
-				cix_aipu_priv->pd_core[i] = &(to_acpi_device_node(child)->dev);
-                pm_runtime_enable(cix_aipu_priv->pd_core[i]);
-				dev_pm_domain_attach(&(to_acpi_device_node(child)->dev), true);
-                i++;
-            }
+		if (is_acpi_data_node(child)) {
+			continue;
+        	}
+        	if (!strncmp(acpi_device_bid(to_acpi_device_node(child)),
+                	 NPU_CORE_ACPI_NAME_PREFIX, ACPI_NAMESEG_SIZE - 1)) {
+
+			if (i == CIX_NPU_PD_NUM)
+				break;
+
+			cix_aipu_priv->pd_core[i] = bus_find_device_by_fwnode(&platform_bus_type, child);
+                	pm_runtime_enable(cix_aipu_priv->pd_core[i]);
+			dev_pm_domain_attach(cix_aipu_priv->pd_core[i], true);
+			dev_pm_set_driver_flags(cix_aipu_priv->pd_core[i], DPM_FLAG_NO_DIRECT_COMPLETE);
+			ACPI_COMPANION(cix_aipu_priv->pd_core[i])->power.flags.ignore_parent = true;
+
+                	i++;
+            	}
         }
 #endif
     } else {
@@ -412,7 +395,6 @@ static int sky1_npu_probe(struct platform_device *p_dev)
     pm_runtime_enable(&p_dev->dev);
 #endif /* CONFIG_PM */
 
-
     if (has_acpi_companion(&p_dev->dev)) {
 		for (i = 0; i < CIX_NPU_PD_NUM; i++) {
 			ret = pm_runtime_resume_and_get(cix_aipu_priv->pd_core[i]);
@@ -436,11 +418,6 @@ static int sky1_npu_probe(struct platform_device *p_dev)
     return 0;
 
 npu_probe_failed:
-    if (has_acpi_companion(&p_dev->dev)) {
-		for (int j = 0; j < i; j++) {
-			pm_runtime_put_sync(cix_aipu_priv->pd_core[j]);
-		}
-	}
 	pm_runtime_put(&p_dev->dev);
 
     if (has_acpi_companion(&p_dev->dev)) {
@@ -450,7 +427,7 @@ npu_probe_failed:
 	}
 	pm_runtime_disable(&p_dev->dev);
 
-#ifdef CONFIG_ENABLE_DEVFREQ	
+#ifdef CONFIG_ENABLE_DEVFREQ
 	sky1_npu_devfreq_remove(&p_dev->dev, cix_aipu_priv);
 #endif
 
@@ -494,12 +471,33 @@ static int sky1_npu_runtime_suspend(struct device *dev)
 		return ret;
 	}
 
+	if (has_acpi_companion(dev)) {
+		for (int i = 0; i < CIX_NPU_PD_NUM; i++) {
+			ret = pm_runtime_put(cix_aipu_priv->pd_core[i]);
+			if (ret < 0) {
+				dev_err(cix_aipu_priv->pd_core[i], "NPU core PM runtime put failed! ret=%d", ret);
+				return ret;
+			}
+		}
+	}
+
 	return ret;
 }
 
 static int sky1_npu_runtime_resume(struct device *dev)
 {
+	int ret;
 	struct platform_device *p_dev = to_platform_device(dev);
+
+	if (has_acpi_companion(dev)) {
+		for (int i = 0; i < CIX_NPU_PD_NUM; i++) {
+			ret = pm_runtime_get_sync(cix_aipu_priv->pd_core[i]);
+			if (ret < 0) {
+				dev_err(cix_aipu_priv->pd_core[i], "NPU core PM runtime get sync failed! ret=%d", ret);
+				return ret;
+			}
+		}
+	}
 
 	return armchina_aipu_resume(p_dev);
 }
