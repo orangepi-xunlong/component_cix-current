@@ -1022,6 +1022,7 @@ void aipu_job_manager_irq_upper_half(struct aipu_partition *partition, int flag,
 	struct aipu_job_manager *manager = NULL;
 	int handled = 0;
 	int triggered = 0;
+	bool abort_cmdpool = false;
 
 	if (unlikely(!partition))
 		return;
@@ -1079,7 +1080,6 @@ void aipu_job_manager_irq_upper_half(struct aipu_partition *partition, int flag,
 	spin_lock(&manager->lock);
 
 	/* soft reset association irq not in coredump scope */
-	bool abort_cmdpool = false;
 	if (manager->version == AIPU_ISA_VERSION_ZHOUYI_V3_1) {
 		if (do_abortion_V3_1(flag, info) && manager->pools[partition->id].created)
 			abort_cmdpool = true;
